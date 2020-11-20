@@ -1,0 +1,460 @@
+@font-face {
+  font-family: "Karla";
+  font-weight: normal;
+  src: url("../fonts/Karla/Karla-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Karla";
+  font-weight: bold;
+  src: url("../fonts/Karla/Karla-Bold.ttf") format("truetype");
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.m-top {
+  margin-top: 8rem;
+}
+
+.text-wrap {
+  max-width: 57rem;
+  margin: 0 auto;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.small-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: .8;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 4.8rem;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+.lead {
+  font-size: 1.8rem;
+  opacity: .8;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: rgba(29, 31, 46, 0.7);
+  position: relative;
+  margin-bottom: 9rem;
+}
+
+.section-title::before, .section-title::after {
+  content: "";
+  width: 4rem;
+  height: 1px;
+  background: rgba(59, 63, 93, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section-title::before {
+  left: -5rem;
+}
+
+.section-title::after {
+  right: -5rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1.6rem;
+  color: rgba(29, 31, 46, 0.7);
+  margin-bottom: 1rem;
+}
+
+.link {
+  display: inline-block;
+  padding: .5rem;
+  color: #a25f4b;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #a25f4b;
+  transition: color 250ms linear;
+}
+
+.link:hover {
+  color: #b97a67;
+}
+
+.flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #1d1f2e;
+}
+
+section {
+  text-align: center;
+}
+
+section:not(.hero) {
+  padding: 9rem 0 3rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1d1f2e;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.mobile-toggler {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.mobile-toggler-line {
+  width: 90%;
+  height: .2rem;
+  background: rgba(29, 31, 46, 0.7);
+  position: relative;
+  transition: height 250ms linear 150ms;
+}
+
+.mobile-toggler-line::before, .mobile-toggler-line::after {
+  content: '';
+  width: 55%;
+  height: .2rem;
+  background: inherit;
+  position: absolute;
+  transition: top 250ms linear 450ms, transform 250ms ease-in-out, width 250ms ease-in-out;
+}
+
+.mobile-toggler-line::before {
+  top: -.6rem;
+}
+
+.mobile-toggler-line::after {
+  top: calc(100% +  .4rem);
+  right: 0;
+}
+
+.mobile-toggler.open .mobile-toggler-line {
+  transition: height 250ms linear 250ms;
+  height: 0;
+}
+
+.mobile-toggler.open .mobile-toggler-line::before, .mobile-toggler.open .mobile-toggler-line::after {
+  width: 100%;
+  transition: top 250ms linear, transform 250ms ease-in-out 450ms, width 250ms ease-in-out 250ms;
+  top: 0;
+}
+
+.mobile-toggler.open .mobile-toggler-line::before {
+  transform: rotate(45deg);
+}
+
+.mobile-toggler.open .mobile-toggler-line::after {
+  transform: rotate(-45deg);
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: .5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #fff;
+  color: #1d1f2e;
+  transition: filter 250ms linear;
+}
+
+.btn:hover {
+  filter: brightness(0.85);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  min-height: 49rem;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.card-sale::after {
+  content: "On Sale";
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  color: #a25f4b;
+  text-transform: capitalize;
+}
+
+.card-top {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-top::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: background-color 250ms linear;
+}
+
+.card-top .card-link {
+  width: 100%;
+  height: 100%;
+}
+
+.card-top .card-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-top .btn-block {
+  width: 90%;
+  border-radius: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 250ms linear, transform 250ms ease-in-out;
+}
+
+.card-top:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.card-top:hover .btn-block {
+  transform: translateY(-2rem) translateX(-50%);
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.card-price {
+  color: rgba(29, 31, 46, 0.7);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.card-price-sale {
+  font-size: 2rem;
+  color: #a25f4b;
+}
+
+.card-price-sale span {
+  text-decoration: line-through;
+  margin-left: 1rem;
+}
+
+.nav {
+  width: 100%;
+  height: 8rem;
+  background: #fff;
+  padding: 0 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  height: 0;
+  width: 100vw;
+  background: transparent;
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  z-index: 900;
+  overflow: hidden;
+  transition: height 500ms linear;
+}
+
+.nav-list-content {
+  padding: 2rem 0;
+  background: #fff;
+  color: #1d1f2e;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.nav-list li:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.nav-list a.active {
+  font-weight: bold;
+  color: #1d1f2e;
+}
+
+.nav-list.open {
+  height: calc(100vh - 8rem);
+}
+
+.nav-cart {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cart img {
+  width: 1.5rem;
+  margin-right: .5rem;
+}
+
+.nav-cart div {
+  font-size: 1.4rem;
+}
+
+.nav-cart span {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+  background: rgba(29, 31, 46, 0.7);
+  color: #fff;
+}
+
+.logo {
+  width: 11rem;
+}
+
+.hero {
+  height: 70vh;
+  background-image: url("../img/hero-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

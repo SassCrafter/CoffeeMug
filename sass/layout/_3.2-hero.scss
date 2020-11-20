@@ -1,0 +1,20 @@
+.hero {
+    height: 70vh;
+    @include set-bg-img("../img/hero-bg.jpg");
+    position: relative;
+    
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, .4);
+        @include absolute(0,0);
+    }
+
+    &-content {
+        position: relative;
+        z-index: 3;
+        color: $white;
+        text-align: center;
+    }
+}

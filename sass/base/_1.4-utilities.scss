@@ -1,0 +1,106 @@
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.m-top {
+    margin-top: $nav-height;
+}
+
+// Text
+
+.text-wrap {
+    max-width: 57rem;
+    margin: 0 auto;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+.lower {
+    text-transform: lowercase;
+}
+
+.small-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: .8;
+    margin-bottom: 1rem;
+}
+
+.large {
+    font-size: 4.8rem;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.lead {
+    font-size: 1.8rem;
+    opacity: .8;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $dark-gray;
+    position: relative;
+    margin-bottom: 9rem;
+
+    &::before,
+    &::after {
+        content: "";
+        width: 4rem;
+        height: 1px;
+        background: lighten($dark-gray, 15%);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+    &::before {
+        left: -5rem;
+    }
+
+    &::after {
+        //left: 0;
+        right: -5rem;
+    }
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: normal;
+    //text-align: center;
+    margin-bottom: 2rem
+}
+
+.text {
+    font-size: 1.6rem;
+    color: $dark-gray;
+    //text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+.link {
+    display: inline-block;
+    padding: .5rem;
+    color: $reddish;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $reddish;
+    //text-align: center;
+    transition: color $t-time linear;
+
+    &:hover {
+        color: lighten($reddish, 10%);
+    }
+}
+
+
+
+.flex {
+    @include flex-center(column);
+}

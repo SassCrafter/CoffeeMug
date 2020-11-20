@@ -1,0 +1,22 @@
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    padding: 1.5rem 2.5rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include set-bg-color($white);
+    transition: filter $t-time linear;
+
+    &:hover {
+        filter: brightness(.85);
+    }
+
+    &-block {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

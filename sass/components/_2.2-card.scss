@@ -1,0 +1,90 @@
+.card {
+    width: 100%;
+    min-height: 49rem;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-sale::after {
+        content: "On Sale";
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 1rem 1.5rem;
+        background: $white;
+        color: $reddish;
+        text-transform: capitalize;
+    }
+
+    &-top {
+        width: 100%;
+        height: 80%;
+        @include absolute(0,0);
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0, 0);
+            @include absolute(0,0);
+            pointer-events: none;
+            transition: background-color $t-time linear;
+        }
+
+        .card-link {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .btn-block {
+            width: 90%;
+            border-radius: 0;
+            @include absolute(85%);
+            opacity: 0;
+            transition: opacity $t-time linear, transform $t-time $t-ease;
+        }
+
+        &:hover {
+            &::before {
+                background: rgba(0,0,0, .3);
+            }
+            .btn-block {
+                transform: translateY(-2rem) translateX(-50%);
+                opacity: 1;
+            }
+        }
+    }
+
+    &-title {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+    }
+
+    &-price {
+        color: $dark-gray;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+
+
+        &-sale {
+            font-size: 2rem;
+            color: $reddish;
+            span {
+                text-decoration: line-through;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+}

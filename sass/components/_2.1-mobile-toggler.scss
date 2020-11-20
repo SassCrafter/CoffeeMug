@@ -1,0 +1,53 @@
+.mobile-toggler {
+    @include flex-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+
+    &-line {
+        width: 90%;
+        height: .2rem;
+        background: $dark-gray;
+        position: relative;
+        transition: height $t-time linear $t-time - 100ms;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 55%;
+            height: .2rem;
+            background: inherit;
+            position: absolute;
+            transition: top $t-time linear $t-time + 200ms, $transform-tr, width $t-time $t-ease;
+        }
+
+        &::before {
+            top: -.6rem;
+        }
+        &::after {
+            top: calc(100% +  .4rem);
+            right: 0;
+        }
+    }
+
+    &.open {
+        .mobile-toggler-line {
+            transition: height $t-time linear $t-time;
+            height: 0;
+
+            &::before,
+            &::after {
+                width: 100%;
+                transition: top $t-time linear, $transform-tr $t-time + 200ms, width $t-time $t-ease $t-time;
+                top: 0;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
