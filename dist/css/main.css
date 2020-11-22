@@ -14,6 +14,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  overflow: hidden;
 }
 
 .m-top {
@@ -36,7 +37,7 @@
 .small-title {
   font-size: 1.2rem;
   text-transform: uppercase;
-  opacity: .8;
+  opacity: 0.8;
   margin-bottom: 1rem;
 }
 
@@ -48,12 +49,13 @@
 
 .lead {
   font-size: 1.8rem;
-  opacity: .8;
+  opacity: 0.8;
   margin-bottom: 2rem;
 }
 
 .section-title {
   display: inline-block;
+  max-width: 25rem;
   font-size: 1.6rem;
   font-weight: normal;
   text-transform: uppercase;
@@ -94,7 +96,7 @@
 
 .link {
   display: inline-block;
-  padding: .5rem;
+  padding: 0.5rem;
   color: #a25f4b;
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -112,6 +114,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.flex div {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
 }
 
 *,
@@ -139,10 +151,13 @@ section {
 }
 
 section:not(.hero) {
-  padding: 9rem 0 3rem;
+  margin: 6rem 0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.2;
   margin-bottom: 2rem;
 }
@@ -223,7 +238,7 @@ img {
   cursor: pointer;
   border: none;
   padding: 1.5rem 2.5rem;
-  border-radius: .5rem;
+  border-radius: 0.1 rem;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -240,6 +255,11 @@ img {
   display: block;
   width: 100%;
   text-align: center;
+}
+
+.btn-dark {
+  background: #1d1f2e;
+  color: #fff;
 }
 
 .card {
@@ -457,4 +477,62 @@ img {
   color: #fff;
   text-align: center;
 }
-/*# sourceMappingURL=main.css.map */
+
+.offer-img {
+  display: grid;
+  grid-template-areas: "big big" "small-1 small-2";
+  grid-gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.offer-img-1 {
+  grid-area: big;
+  height: 30rem;
+  background-image: url("../img/offer/offer-img-1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.offer-img-2 {
+  grid-area: small-1;
+  height: 15rem;
+  background-image: url("../img/offer/offer-img-2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.offer-img-3 {
+  grid-area: small-2;
+  height: 15rem;
+  background-image: url("../img/offer/offer-img-3.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.offer-small {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.4rem;
+  color: rgba(29, 31, 46, 0.7);
+  margin-bottom: 2rem;
+}
+
+.offer-title {
+  font-size: 3rem;
+}
+
+.offer p {
+  color: rgba(29, 31, 46, 0.7);
+  margin-bottom: 2rem;
+}
+
+.parallax {
+  min-height: 40vh;
+  background-image: url("../img/parralax-section-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

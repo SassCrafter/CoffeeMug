@@ -1,45 +1,49 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: $font-stack;
-    line-height: 1.6;
-    @include set-bg-color($white);
+  font-size: 1.6rem;
+  font-family: $font-stack;
+  line-height: 1.6;
+  @include set-bg-color($white);
 }
 
 section {
-    text-align: center;
-    &:not(.hero) {
-        padding: 9rem 0 3rem;
-    }
+  text-align: center;
+  &:not(.hero) {
+    //padding: 9rem 0 3rem;
+    margin: 6rem 0;
+  }
 }
 
-h1,h2,h3,h4 {
-    line-height: 1.2;
-    margin-bottom: 2rem;
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
- a {
-     text-decoration: none;
-     color: $black;
- }
+a {
+  text-decoration: none;
+  color: $black;
+}
 
- img {
-     display: inline-block;
-    max-width: 100%;
-    vertical-align: middle;
- }
+img {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}

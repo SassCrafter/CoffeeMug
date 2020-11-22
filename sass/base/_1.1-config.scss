@@ -1,49 +1,48 @@
 // Set Text Color
 @function set-text-color($color) {
-    @if (lightness($color) > 60) {
-        @return $black;
-    } @else {
-        @return $white;
-    }
+  @if (lightness($color) > 60) {
+    @return $black;
+  } @else {
+    @return $white;
+  }
 }
 
 // Set bg color
 @mixin set-bg-color($color) {
-    background: $color;
-    color: set-text-color($color);
+  background: $color;
+  color: set-text-color($color);
 }
 
 // Set bg img
 @mixin set-bg-img($path) {
-    background-image: url($path);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url($path);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 // Display flex and align everything in center
 @mixin flex-center($direction: row) {
-    height: 100%;
-    display: flex;
-    flex-direction: $direction;
-    align-items: center;
-    justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
 }
-
 
 // Position absolute (default center);
 @mixin absolute($top: 50%, $left: 50%) {
-    position: absolute;
-    top: $top;
-    left: $left;
+  position: absolute;
+  top: $top;
+  left: $left;
 
-    @if ($top == 50% and $left == 50%) {
-        transform: translate(-50%, -50%);
-    }
-    @if ($top == 50% and $left != 50%) {
-        transform: translateY(-50%);
-    }
-    @if ($top != 50% and $left == 50%) {
-        transform: translateX(-50%);
-    }
+  @if ($top == 50% and $left == 50%) {
+    transform: translate(-50%, -50%);
+  }
+  @if ($top == 50% and $left != 50%) {
+    transform: translateY(-50%);
+  }
+  @if ($top != 50% and $left == 50%) {
+    transform: translateX(-50%);
+  }
 }

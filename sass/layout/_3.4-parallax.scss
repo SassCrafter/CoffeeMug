@@ -1,0 +1,4 @@
+.parallax {
+  min-height: 40vh;
+  @include set-bg-img("../img/parralax-section-bg.jpg");
+}
