@@ -1,0 +1,43 @@
+.footer {
+  padding-bottom: 6rem;
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+    img {
+      width: 12rem;
+    }
+  }
+
+  &-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: $dark-gray;
+  }
+
+  &-list {
+    li:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    a {
+      display: inline-block;
+      padding: 0.5rem;
+      font-size: 1.4rem;
+      color: $dark-gray;
+      text-transform: capitalize;
+      transition: color;
+
+      &:hover {
+        color: $reddish;
+      }
+    }
+  }
+}

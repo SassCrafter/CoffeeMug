@@ -8,6 +8,10 @@
   margin-top: $nav-height;
 }
 
+.bg-dark {
+  @include set-bg-color($black);
+}
+
 // Text
 
 .text-wrap {
@@ -17,6 +21,9 @@
 
 .upper {
   text-transform: uppercase;
+}
+.cap {
+  text-transform: capitalize;
 }
 .lower {
   text-transform: lowercase;
