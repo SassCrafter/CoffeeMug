@@ -12,9 +12,9 @@
 
   input:not([type="submit"]) {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.1rem 1.5rem;
     margin-bottom: 1rem;
-    display: inline-block;
+    //display: inline-block;
     border: 2px solid #2f303e;
     outline: none;
     background: transparent;
@@ -26,6 +26,17 @@
       font-size: 1.4rem;
       text-transform: uppercase;
       //text-align: center;
+    }
+  }
+
+  @include media("tablet") {
+
+    input:not([type="submit"]) {
+      width: 50%;
+    }
+    input[type="submit"] {
+      display: inline-block;
+      width: 20%;
     }
   }
 }

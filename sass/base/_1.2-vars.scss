@@ -2,11 +2,12 @@
 $white: #fff;
 $black: #1d1f2e;
 $dark-gray: rgba(29, 31, 46, 0.7);
+$gray: #f6f6f6;
 $reddish: #a25f4b;
 
 $font-stack: "Karla", Arial, Helvetica, sans-serif;
 
-$max-width: 1400px;
+$max-width: 110rem;
 $nav-height: 8rem;
 
 $t-time: 250ms;
@@ -16,4 +17,4 @@ $transform-tr: transform $t-time ease-in-out;
 
 $tablet: 768px;
 $laptop: 900px;
-$pc: 1200px;
+$pc: 1024px;

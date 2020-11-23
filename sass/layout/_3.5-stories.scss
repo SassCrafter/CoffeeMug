@@ -5,6 +5,8 @@
     margin-bottom: 3rem;
     position: relative;
 
+    
+
     &:hover {
       .btn {
         opacity: 1;
@@ -49,5 +51,9 @@
   &-date {
     font-size: 1.4rem;
     font-weight: bold;
+  }
+
+  @include media("pc") {
+    text-align: left;
   }
 }

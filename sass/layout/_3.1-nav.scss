@@ -9,10 +9,18 @@
     z-index: 1000;
 
     &-content {
+        max-width: 94rem;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        &-right {
+            @include flex-center;
+            div:not(:last-child) {
+                margin-right: 2rem;
+            }
+        }
     }
 
     &-list {
@@ -45,10 +53,26 @@
             letter-spacing: .5px;
             text-transform: uppercase;
             color: #888;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 1px;
+                background: $reddish;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: width $t-time ease;
+            }
 
             &.active {
                 font-weight: bold;
                 color: $black;
+            }
+
+            &:hover::before {
+                width: 100%;
             }
         }
 
@@ -80,6 +104,33 @@
             border-radius: 50%;
             text-align: center;
             @include set-bg-color($dark-gray);
+        }
+    }
+
+    
+    @include media("pc") {
+        &-list {
+            position: static;
+            width: auto;
+            height: 100%;
+
+            &-content {
+                height: 100%;
+                flex-direction: row;
+            }
+
+            li {
+              margin-bottom: 0 !important;
+              margin-left: 3rem; 
+            }
+
+            a {
+                padding: .5rem 1rem;
+            }
+            
+        }
+        .mobile-toggler {
+            display: none;
         }
     }
 }

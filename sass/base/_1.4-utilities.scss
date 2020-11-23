@@ -4,12 +4,22 @@
   padding: 0 2rem;
   overflow: hidden;
 }
+
+.mw-section {
+  max-width: $max-width + 30rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .m-top {
   margin-top: $nav-height;
 }
 
 .bg-dark {
   @include set-bg-color($black);
+}
+.bg-gray {
+  @include set-bg-color($gray);
 }
 
 // Text
@@ -78,6 +88,12 @@
   }
 }
 
+.page-title {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  margin-top: 6rem;
+}
+
 .title {
   font-size: 2.8rem;
   font-weight: normal;
@@ -89,7 +105,7 @@
   font-size: 1.6rem;
   color: $dark-gray;
   //text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .link {
@@ -110,13 +126,78 @@
 .flex {
   @include flex-center(column);
 
-  div {
+  &-left,
+  &-right {
     width: 100%;
   }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-gap: 2rem;
+}
+
+
+.underline {
+  padding-bottom: 3rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 5rem;
+    height: 2px;
+    background: $gray;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+@include media("pc") {
+
+  .container {
+    padding: 0 3rem;
+  }
+
+  .flex {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-left,
+    &-right {
+      width: 48% !important;
+    }
+  }
+
+  .small-title {
+    font-size: 1.5rem;
+  }
+  
+  .large {
+    font-size: 5.5rem;
+  }
+  
+  .lead {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .text {
+    font-size: 1.8rem;
+  }
+  
+  .link {
+    font-size: 1.6rem;
+  }
+  
 }

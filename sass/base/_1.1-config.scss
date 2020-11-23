@@ -22,8 +22,8 @@
 }
 
 // Display flex and align everything in center
-@mixin flex-center($direction: row) {
-  height: 100%;
+@mixin flex-center($direction: row, $height: 100%) {
+  height: $height;
   display: flex;
   flex-direction: $direction;
   align-items: center;
@@ -51,6 +51,12 @@
 @mixin media($size) {
   @if ($size == "tablet") {
     @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if ($size == "pc") {
+    @media screen and (min-width: $pc) {
       @content;
     }
   }

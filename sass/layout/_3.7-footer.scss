@@ -40,4 +40,16 @@
       }
     }
   }
+
+  .email-link {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  @include media("pc") {
+    &-content {
+      text-align: left;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+    }
+  }
 }

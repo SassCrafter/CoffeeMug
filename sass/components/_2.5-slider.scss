@@ -1,0 +1,9 @@
+.swiper-container {
+    max-width: 94rem;
+    height: 58rem;
+    margin-bottom: 5rem;
+
+    @include media("pc") {
+        height: 40rem;
+    }
+}

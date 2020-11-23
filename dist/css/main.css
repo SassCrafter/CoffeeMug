@@ -11,10 +11,16 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 110rem;
   margin: 0 auto;
   padding: 0 2rem;
   overflow: hidden;
+}
+
+.mw-section {
+  max-width: 140rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .m-top {
@@ -24,6 +30,11 @@
 .bg-dark {
   background: #1d1f2e;
   color: #fff !important;
+}
+
+.bg-gray {
+  background: #f6f6f6;
+  color: #1d1f2e !important;
 }
 
 .text-wrap {
@@ -91,6 +102,12 @@
   right: -5rem;
 }
 
+.page-title {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  margin-top: 6rem;
+}
+
 .title {
   font-size: 2.8rem;
   font-weight: normal;
@@ -100,7 +117,7 @@
 .text {
   font-size: 1.6rem;
   color: rgba(29, 31, 46, 0.7);
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .link {
@@ -125,14 +142,64 @@
   justify-content: center;
 }
 
-.flex div {
+.flex-left, .flex-right {
   width: 100%;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-gap: 2rem;
+}
+
+.underline {
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  width: 5rem;
+  height: 2px;
+  background: #f6f6f6;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 3rem;
+  }
+  .flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .flex-left, .flex-right {
+    width: 48% !important;
+  }
+  .small-title {
+    font-size: 1.5rem;
+  }
+  .large {
+    font-size: 5.5rem;
+  }
+  .lead {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .text {
+    font-size: 1.8rem;
+  }
+  .link {
+    font-size: 1.6rem;
+  }
 }
 
 *,
@@ -281,6 +348,7 @@ img {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  opacity: 1;
 }
 
 .card-sale::after {
@@ -368,6 +436,14 @@ img {
   margin-left: 1rem;
 }
 
+.card.hide {
+  display: none;
+}
+
+.card.show {
+  display: flex;
+}
+
 .form {
   width: 100%;
   margin-top: 4rem;
@@ -383,9 +459,8 @@ img {
 
 .form input:not([type="submit"]) {
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.1rem 1.5rem;
   margin-bottom: 1rem;
-  display: inline-block;
   border: 2px solid #2f303e;
   outline: none;
   background: transparent;
@@ -397,6 +472,73 @@ img {
 .form input:not([type="submit"])::placeholder {
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .form input:not([type="submit"]) {
+    width: 50%;
+  }
+  .form input[type="submit"] {
+    display: inline-block;
+    width: 20%;
+  }
+}
+
+.swiper-container {
+  max-width: 94rem;
+  height: 58rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper-container {
+    height: 40rem;
+  }
+}
+
+.tag-show {
+  width: 100%;
+  max-width: 90rem;
+  padding: 1rem 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto;
+}
+
+.tag-show-controll {
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #c9998a;
+  transition: all 250ms linear;
+}
+
+.tag-show-controll.active, .tag-show-controll:hover {
+  color: #a25f4b;
+  border: 1px solid #e9d6d0;
+}
+
+@media screen and (min-width: 768px) {
+  .tag-show {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .tag-show-controll {
+    flex: 1;
+  }
 }
 
 .nav {
@@ -411,10 +553,23 @@ img {
 }
 
 .nav-content {
+  max-width: 94rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-content-right {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-content-right div:not(:last-child) {
+  margin-right: 2rem;
 }
 
 .nav-list {
@@ -452,11 +607,27 @@ img {
   letter-spacing: .5px;
   text-transform: uppercase;
   color: #888;
+  position: relative;
+}
+
+.nav-list a::before {
+  content: '';
+  width: 0;
+  height: 1px;
+  background: #a25f4b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 250ms ease;
 }
 
 .nav-list a.active {
   font-weight: bold;
   color: #1d1f2e;
+}
+
+.nav-list a:hover::before {
+  width: 100%;
 }
 
 .nav-list.open {
@@ -489,6 +660,28 @@ img {
   color: #fff !important;
 }
 
+@media screen and (min-width: 1024px) {
+  .nav-list {
+    position: static;
+    width: auto;
+    height: 100%;
+  }
+  .nav-list-content {
+    height: 100%;
+    flex-direction: row;
+  }
+  .nav-list li {
+    margin-bottom: 0 !important;
+    margin-left: 3rem;
+  }
+  .nav-list a {
+    padding: .5rem 1rem;
+  }
+  .nav .mobile-toggler {
+    display: none;
+  }
+}
+
 .logo {
   width: 11rem;
 }
@@ -499,6 +692,7 @@ img {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center bottom;
   position: relative;
 }
 
@@ -513,15 +707,23 @@ img {
 }
 
 .hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
   z-index: 3;
   color: #fff;
   text-align: center;
+  max-width: 62rem;
 }
 
 .offer-img {
   display: grid;
-  grid-template-areas: "big big" "small-1 small-2";
+  grid-template-areas: "big big" "small-1 small-2";
+  justify-content: center;
   grid-gap: 1rem;
   margin-bottom: 4rem;
 }
@@ -544,10 +746,14 @@ img {
 
 .offer-img-2 {
   grid-area: small-1;
+  max-width: 16rem;
+  max-height: 13rem;
 }
 
 .offer-img-3 {
   grid-area: small-2;
+  max-width: 16rem;
+  max-height: 13rem;
 }
 
 .offer-small {
@@ -569,13 +775,32 @@ img {
 
 @media screen and (min-width: 768px) {
   .offer-img {
-    grid-template-areas: "big small-1" "big small-2";
+    grid-template-areas: "big small-1" "big small-2";
+  }
+  .offer-img-1 {
+    max-width: 28rem;
   }
 }
 
 .parallax {
   min-height: 40vh;
+}
+
+@media screen and (min-width: 1024px) {
+  .parallax {
+    background-attachment: fixed;
+  }
+}
+
+.home-parallax {
   background-image: url("../img/parralax-section-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-parallax {
+  background-image: url("../img/parralax-about.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -632,8 +857,14 @@ img {
   font-weight: bold;
 }
 
+@media screen and (min-width: 1024px) {
+  .story {
+    text-align: left;
+  }
+}
+
 .call-to-action {
-  padding: 6rem 2rem !important;
+  padding: 8rem 2rem !important;
 }
 
 .call-to-action .section-title {
@@ -685,3 +916,92 @@ img {
 .footer-list a:hover {
   color: #a25f4b;
 }
+
+.footer .email-link {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-content {
+    text-align: left;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+  }
+}
+
+.about {
+  height: 60vh;
+  position: relative;
+  margin-bottom: 23rem !important;
+}
+
+.about-img {
+  width: 100%;
+  height: 32rem;
+  background-image: url("../img/about/about-head-pic.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+}
+
+.intro-about {
+  margin-bottom: 4rem;
+}
+
+.intro-about-img {
+  width: 100%;
+  height: 38rem;
+}
+
+.intro-about-img-1 {
+  background-image: url("../img/about/about-1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro-about-img-2 {
+  background-image: url("../img/about/about-2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro-about-content {
+  margin-top: 3rem;
+}
+
+.intro-about-content h3 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .intro-about:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .intro-about:nth-child(even) .intro-about-content {
+    padding-left: 5rem;
+    text-align: right;
+  }
+  .intro-about-content {
+    padding-right: 5rem;
+    text-align: left;
+  }
+}
+
+.employee-img {
+  margin-bottom: 2rem;
+}
+
+.employee-name {
+  text-transform: capitalize;
+  opacity: .9;
+  margin-bottom: 1rem;
+}
+
+.employee-pos {
+  text-transform: uppercase;
+  opacity: .6;
+}
+/*# sourceMappingURL=main.css.map */

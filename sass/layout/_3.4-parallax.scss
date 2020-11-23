@@ -1,4 +1,15 @@
 .parallax {
   min-height: 40vh;
+  
+
+  @include media("pc") {
+    background-attachment: fixed;
+  }
+}
+
+.home-parallax {
   @include set-bg-img("../img/parralax-section-bg.jpg");
+}
+.about-parallax {
+  @include set-bg-img("../img/parralax-about.jpg");
 }

@@ -4,6 +4,7 @@
     grid-template-areas:
       "big big"
       "small-1 small-2";
+      justify-content: center;
     grid-gap: 1rem;
     margin-bottom: 4rem;
 
@@ -24,9 +25,13 @@
     }
     &-2 {
       grid-area: small-1;
+      max-width: 16rem;
+      max-height: 13rem;
     }
     &-3 {
       grid-area: small-2;
+      max-width: 16rem;
+      max-height: 13rem
     }
   }
 
@@ -52,6 +57,10 @@
       grid-template-areas:
         "big small-1"
         "big small-2";
+
+        &-1 {
+          max-width: 28rem;
+        }
     }
   }
 }

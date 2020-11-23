@@ -1,6 +1,7 @@
 .hero {
     height: 70vh;
     @include set-bg-img("../img/hero-bg.jpg");
+    background-position: center bottom;
     position: relative;
     
     &::before {
@@ -12,9 +13,12 @@
     }
 
     &-content {
+        @include flex-center;
+        flex-direction: column;
         position: relative;
         z-index: 3;
         color: $white;
         text-align: center;
+        max-width: 62rem;
     }
 }
