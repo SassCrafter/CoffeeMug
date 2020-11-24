@@ -1,0 +1,147 @@
+.contact-card {
+
+    &-img {
+        width: 100%;
+        min-height: 20rem;
+
+        &-1 {
+            @include set-bg-img('../img/contact/contact-london-office.jpg');
+        }
+        &-2 {
+            @include set-bg-img('../img/contact/contact-california-office.jpg');
+        }
+    }
+
+    &-info {
+        margin-top: 4rem;
+
+        h4 {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            color: $dark-gray;
+            //font-weight: normal;
+        }
+        h2 {
+            text-transform: capitalize;
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+
+        ul {
+            .text {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+.contact-form {
+    .form {
+        border: 1px solid $gray;
+        padding: 2rem;
+
+        &-content {
+            width: 100%;
+        }
+
+        .text-wrap {
+            margin-bottom: 4rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: $dark-gray;
+            margin-bottom: 2rem;
+
+            span {
+                display: block;
+                font-size: 2rem;
+                margin-top: 1rem;
+                font-weight: normal;
+            }
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: normal;
+        }
+
+        &-group {
+            margin-bottom: 2rem;
+            label {
+                display: block;
+                text-transform: uppercase;
+                color: $dark-gray;
+                margin-bottom: 1rem;
+            }
+
+            input,textarea {
+                border: 1px solid darken($gray, 10%);
+                color: $black;
+                font-size: 1.3rem;
+                font-weight: bold;
+                &::placeholder {
+                    color: darken($gray, 15%);
+                    font-weight: normal;
+                }
+
+                &:focus {
+                    outline: 1px solid $black;
+                }
+            }
+            textarea {
+                width: 100%;
+                padding: 1rem 4rem;
+                text-align: center;
+
+                &::placeholder {
+                    text-transform: uppercase;
+                    //max-width: 20rem;
+                    padding: 0 2rem;
+                    font-size: 1.4rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+    @include media('pc') {
+        text-align: left;
+        .flex {
+            align-items: flex-start;
+            &-left {
+                width: 70% !important;
+                margin-right: 6rem;
+            }
+        }
+
+        .form {
+            padding: 2rem 4rem;
+        }
+
+        .form-group {
+            input {
+                width: 100%;
+                padding: 1.5rem 2rem;
+            }
+        }
+        
+    }
+}
+
+
+// Directory
+.directory-item {
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: $dark-gray;
+    }
+    h2 {
+        text-transform: capitalize;
+        font-size: 1.6rem;
+    }
+}

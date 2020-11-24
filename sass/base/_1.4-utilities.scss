@@ -11,6 +11,21 @@
   margin-right: auto !important;
 }
 
+.deco-block {
+  padding: 6rem 0 !important;
+  
+  .text-wrap {
+    margin-bottom: 10rem !important;
+  }
+}
+
+
+.overlay-section {
+  margin-top: -18rem !important;
+  position: relative;
+  z-index: 10;
+}
+
 .m-top {
   margin-top: $nav-height;
 }
@@ -130,6 +145,9 @@
   &-right {
     width: 100%;
   }
+  &-right {
+    margin-top: 3rem;
+  }
 }
 
 .grid {
@@ -170,6 +188,10 @@
     &-right {
       width: 48% !important;
     }
+    &-right {
+      margin-top: 0;
+    }
+
   }
 
   .small-title {
